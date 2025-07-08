@@ -1,1 +1,1 @@
-{"players":[{"id":"1752000022801","nickname":"와즈"},{"id":"ai","nickname":"AI"}],"gameStatus":"playing","round":1,"scores":[0,0],"choices":["scissors",null],"attacker":null,"defender":null,"roundResult":null,"winner":null}
+{"players":[{"id":"1752000022801","nickname":"와즈"},{"id":"ai","nickname":"AI"}],"gameStatus":"playing","round":1,"scores":[0,0],"choices":["scissors","paper"],"attacker":null,"defender":null,"roundResult":null,"winner":null}
