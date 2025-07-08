@@ -1,0 +1,23 @@
+{
+  "gameId": "1752003864977",
+  "players": [
+    {
+      "id": "1752003864977",
+      "nickname": "",
+      "lastSeen": 1752003864977
+    }
+  ],
+  "status": "waiting",
+  "round": 0,
+  "scores": {
+    "player1": 0,
+    "player2": 0
+  },
+  "attacker": null,
+  "defender": null,
+  "choices": {
+    "player1": null,
+    "player2": null
+  },
+  "lastUpdate": 1752003864977
+}
