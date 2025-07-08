@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구겜스 묵찌빠</title>
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 로딩 화면 -->
+    <div id="loading-screen" class="screen active">
+        <div class="loading-container">
+            <div class="game-logo">
+                <h1>구겜스 묵찌빠</h1>
+                <div class="logo-subtitle">GusickGameStudio</div>
+            </div>
+            <div class="loading-progress">
+                <div class="loading-bar">
+                    <div class="loading-fill"></div>
+                </div>
+                <div class="loading-text">인터넷 확인중...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 닉네임 설정 화면 -->
+    <div id="nickname-screen" class="screen">
+        <div class="nickname-container">
+            <h2>플레이어 닉네임 설정</h2>
+            <div class="nickname-input-group">
+                <label for="nickname-input">닉네임을 입력하세요</label>
+                <input type="text" id="nickname-input" maxlength="10" placeholder="닉네임 입력">
+                <button id="nickname-confirm" class="btn btn-primary">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 화면 -->
+    <div id="main-screen" class="screen">
+        <div class="main-container">
+            <div class="game-title">
+                <h1>구겜스 묵찌빠</h1>
+                <p>5점 먼저 달성하는 플레이어가 승리!</p>
+            </div>
+            <div class="main-buttons">
+                <button id="join-game-btn" class="btn btn-large btn-primary">참여하기</button>
+                <button id="ai-game-btn" class="btn btn-large btn-secondary">AI와 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 대기실 화면 -->
+    <div id="waiting-screen" class="screen">
+        <div class="waiting-container">
+            <h2>게임 대기실</h2>
+            <div class="players-list">
+                <h3>참여한 플레이어</h3>
+                <div id="players-container">
+                    <!-- 플레이어 목록이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+            <div class="waiting-buttons">
+                <button id="start-game-btn" class="btn btn-primary" disabled>게임 시작</button>
+                <button id="leave-waiting-btn" class="btn btn-secondary">나가기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 게임 화면 -->
+    <div id="game-screen" class="screen">
+        <div class="game-container">
+            <div class="game-header">
+                <div class="score-board">
+                    <div class="player-score">
+                        <span class="player-name" id="player1-name">플레이어1</span>
+                        <span class="score" id="player1-score">0</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="player-score">
+                        <span class="player-name" id="player2-name">플레이어2</span>
+                        <span class="score" id="player2-score">0</span>
+                    </div>
+                </div>
+                <div class="game-status">
+                    <div id="game-phase">첫 번째 가위바위보</div>
+                    <div id="timer">15</div>
+                </div>
+            </div>
+            
+            <div class="game-area">
+                <div class="player-choices">
+                    <div class="choice-display" id="player1-choice">?</div>
+                    <div class="choice-display" id="player2-choice">?</div>
+                </div>
+                
+                <div class="choice-buttons">
+                    <button class="choice-btn" data-choice="rock">
+                        <span class="choice-emoji">✊</span>
+                        <span class="choice-text">묵</span>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors">
+                        <span class="choice-emoji">✌️</span>
+                        <span class="choice-text">찌</span>
+                    </button>
+                    <button class="choice-btn" data-choice="paper">
+                        <span class="choice-emoji">✋</span>
+                        <span class="choice-text">빠</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 라운드 결과 화면 -->
+    <div id="round-result-screen" class="screen">
+        <div class="result-container">
+            <div class="result-content">
+                <h2 id="round-result-title">라운드 결과</h2>
+                <div class="result-choices">
+                    <div class="result-choice">
+                        <span id="result-player1-name">플레이어1</span>
+                        <span id="result-player1-choice">✊</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="result-choice">
+                        <span id="result-player2-name">플레이어2</span>
+                        <span id="result-player2-choice">✌️</span>
+                    </div>
+                </div>
+                <div id="round-winner">플레이어1 승리!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 게임 결과 화면 -->
+    <div id="final-result-screen" class="screen">
+        <div class="final-result-container">
+            <div class="final-result-content">
+                <h1 id="final-result-title">게임 종료</h1>
+                <div class="final-score">
+                    <div class="final-player-score">
+                        <span id="final-player1-name">플레이어1</span>
+                        <span id="final-player1-score">0</span>
+                    </div>
+                    <div class="final-player-score">
+                        <span id="final-player2-name">플레이어2</span>
+                        <span id="final-player2-score">0</span>
+                    </div>
+                </div>
+                <div id="final-winner">플레이어1 승리!</div>
+                <button id="return-main-btn" class="btn btn-primary">메인으로 돌아가기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 오디오 요소들 -->
+    <audio id="bg-music" loop>
+        <source src="audio/배경음악.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="touch-sound">
+        <source src="audio/터치효과음.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="win-sound">
+        <source src="audio/승리1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="lose-sound">
+        <source src="audio/패배1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="game-win-sound">
+        <source src="audio/게임승리.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="game-lose-sound">
+        <source src="audio/게임패배.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/simple-script.js"></script>
+</body>
+</html>
+
