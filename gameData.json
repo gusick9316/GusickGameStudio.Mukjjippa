@@ -7,6 +7,20 @@
     "빠",
     "빠"
   ],
-  "roundResults": [],
-  "lastUpdated": 1752000594497
+  "roundResults": [
+    {
+      "round": 1,
+      "choices": [
+        "빠",
+        "빠"
+      ],
+      "winner": null,
+      "result": "비겼습니다! 다시 합니다.",
+      "scores": [
+        0,
+        0
+      ]
+    }
+  ],
+  "lastUpdated": 1752000595524
 }
