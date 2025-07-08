@@ -4,8 +4,8 @@
     "AI 플레이어"
   ],
   "choices": [
-    "빠",
-    "빠"
+    null,
+    null
   ],
   "roundResults": [
     {
@@ -22,5 +22,5 @@
       ]
     }
   ],
-  "lastUpdated": 1752000595524
+  "lastUpdated": 1752000601667
 }
